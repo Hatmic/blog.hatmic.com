@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../img/Profile0.jpg">
+  <title></title>
+  <style>
+
+/*# sourceURL=webpack://./src/muya/lib/assets/styles/exportStyle.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9tdXlhL2xpYi9hc3NldHMvc3R5bGVzL2V4cG9ydFN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFNBQVM7RUFDVCxVQUFVO0VBQ1YscUJBQXFCO0FBQ3ZCOztBQUVBOztFQUVFLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCOztBQUVBOzs7RUFHRSwyQkFBMkI7QUFDN0I7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7QUFDQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxPQUFPO0VBQ1AsY0FBYztFQUNkLGNBQWM7RUFDZCwrQkFBK0I7QUFDakMiLCJzb3VyY2VSb290IjoiIn0= */</style>
+  <style>pre.front-matter{display:none!important;}</style>
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="c-基础语法---3-循环结构">C++ 基础语法 - 3 循环结构</h1>
+<h3 class="atx" id="31-for-循环">3.1 for 循环</h3>
+<p>在 C++ 中，循环结构用于重复执行一段代码，让代码在满足一定条件下反复执行。</p>
+<p>for 循环是竞赛中最常用的循环结构，其语法如下：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span>初始化表达式<span class="token punctuation">;</span> 循环条件<span class="token punctuation">;</span> 更新表达式<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 循环体</span>
+<span class="token punctuation">}</span></code></pre>
+<p>初始化表达式在循环开始时执行的，一般用于初始化循环变量。</p>
+<p>循环条件在每次迭代前都会被检查，如果条件为真，则继续循环；否则循环结束。</p>
+<p>更新表达式在每次循环结束后执行，一般用于更新循环变量的值。</p>
+<p>举一个例子：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>其中，<code>i++</code> 和 <code>i += 1</code> 的意思是一样的；还有 <code>i--</code> 和 <code>i -= 1</code> 的意思是一样的。</p>
+<p>在初始化表达式中，要确保 <code>int i = 0</code> 这样的语句不要和在本函数内的变量和全局变量有冲突。不过像这样的，在初始化表达式中声明的变量只在这个循环中生效，你完全可以像这样写：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>如果你想用一个已经声明过的变量，那你可以这样写 <code>for (i = 0; i &lt; n; i++)</code> 也是完全没有问题的。</p>
+<p>例如：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在一些情况下，初始化表达式和循环条件都是可以被省略的。比如你在前面已经初始化过循环变量，那就不需要再初始化了，你可以这样写：<code>for ( ; i &lt; 5; i++)</code>；或者你不需要循环条件，即进行无限循环，那你可以这样写：<code>for (int i = 0; ; i++)</code>。但在大多数情况下，我们不会省略更新表达式，那样做是没有意义的。</p>
+<h3 class="atx" id="32-while-循环">3.2 while 循环</h3>
+<p>除了 for 循环，在竞赛中 while 循环也是很常见的。</p>
+<p>while 循环在每次迭代之前检查循环条件，只有在条件为真时才执行循环体。其语法如下：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">while</span> <span class="token punctuation">(</span>循环条件<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 循环体</span>
+<span class="token punctuation">}</span></code></pre>
+<p>示例：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>请注意，在写 while 循环中一定要记着迭代循环变量，否则你会陷入死循环。这个问题在新人中很常见，并且在当你应对一些复杂题目中这样的错误很难被发现。</p>
+<p>我们如何像 for 循环那样做一个无限循环呢？只需要让循环条件永远是 true 即可。你可以这样写：<code>while (2 &gt; 1)</code>，很显然 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">2</span></span></span></span> 是永远大于 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">1</span></span></span></span> 的；或者直接这样写：<code>while (true)</code>。</p>
+<h3 class="atx" id="33-break-与-main-函数中的-return-0">3.3 break 与 main 函数中的 return 0;</h3>
+<p>当我们在循环中想要结束循环时，我们可以用 C++ 中的关键字 <code>break;</code> 或在 main 函数中使用 <code>return 0;</code> 来结束循环。</p>
+<p><code>break;</code> 的作用是 <strong>结束这一循环，去执行后面的内容</strong>。例如：你在无限循环中找到了一个是 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">100</span></span></span></span> 的倍数的数，你想赶快地结束循环并且输出 <code>I found it!</code>，那你可以这样做：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// 结束循环，去执行后面的内容</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"I found it!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></code></pre>
+<p>而 <strong>在 main 函数中</strong>，<code>return 0;</code> 表示结束程序。如果程序执行到 <code>return 0;</code> 的时候，程序就停止运行了。<code>return 0;</code> 不仅可以写在 main 函数的末尾，也可以写在程序中。还是刚才的例子，我们可以这样编写程序：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"I found it!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 输出后，直接结束程序</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>请注意，<code>return 0;</code> 一定要编写在合适的地方，否则可能会在程序应继续运行的时候停止运行。</p>
+<h3 class="atx" id="34-题目---最大值">3.4 题目 - 最大值</h3>
+<p>这道题是对于初学者的很常见的，你可以在 AtCoder 上提交这道题。题目在 <a href="https://atcoder.jp/contests/chokudai_S001/tasks/chokudai_S001_a">A - 最大値</a> 这里。</p>
+<p>题意很好理解：给你一个数字 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">n</span></span></span></span>，然后给出长度为 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">n</span></span></span></span> 的序列，让你求序列中的最大值。</p>
+<p>我们一共做 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">n</span></span></span></span> 次输入，这当然可以用循环来做。对于每一次输入，我们用变量 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span> 来记录这个数字，再用变量 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span></span></span></span> 来保存序列当前的最大值。那如何保存最大值呢？我们可以判断一下，如果 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.5782em;vertical-align:-0.0391em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">&lt;</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span>，那说明此时 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span></span></span></span> 就不是序列中的最大值了，我们就把 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span></span></span></span> 赋值为 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span>；否则不改变 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span></span></span></span> 的值。</p>
+<p>当然，随便给 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span></span></span></span> 设置一个数是不可靠的。我们在一开始把 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">xx</span></span></span></span> 设置为序列中的第一个数就可以了。</p>
+<p>代码如下：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    cin <span class="token operator">&gt;&gt;</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> maxx<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+        cin <span class="token operator">&gt;&gt;</span> x<span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 如果是第一次输入 x，那就给 maxx 设置初始值为 x</span>
+            maxx <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>maxx <span class="token operator">&lt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 如果当前 maxx 小于 x，那就把 maxx 赋值为 x</span>
+            maxx <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    cout <span class="token operator">&lt;&lt;</span> maxx <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>通过这个题目，我们可以很简单地想到如何求最小值，读者们可以去尝试一下。</p>
+</article>
+</body>
+</html>

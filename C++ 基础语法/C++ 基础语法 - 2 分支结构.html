@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../img/Profile0.jpg">
+  <style>
+  pre.front-matter{display:none!important;}</style>
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="c-基础语法---2-分支结构">C++ 基础语法 - 2 分支结构</h1>
+<h3 class="atx" id="分支结构">分支结构</h3>
+<p>分支结构是指根据条件选择不同路径执行代码的结构。通过分支结构，程序可以根据不同的情况执行不同的代码。</p>
+<p>通俗一点讲，就是程序在遇到这个情况下要这么做，但在另一种情况下要那么做，这样就很好理解了。</p>
+<p>分支结构有两种写法，一种是 if 语句，另一种是 switch 语句。由于 if 语句 <strong>更灵活</strong>、能处理的 <strong>范围更广</strong>、更 <strong>易于理解</strong>，我将着重讲解 if 语句的写法。</p>
+<h3 class="atx" id="21-if-语句">2.1 if 语句</h3>
+<p>if 语句中的写法大致如下：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当条件为真时执行的代码</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>another_condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当另一个条件为真时执行的代码</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当以上条件都不为真时执行的代码</span>
+<span class="token punctuation">}</span></code></pre>
+<p>你可以很简单地把它背下来。<code>if</code> 是如果的意思，<code>else</code> 是否则的意思，那 <code>else if</code> 就是否则如果的意思。</p>
+<p>在代码的注释中，我提到了”条件为真“，条件为真指的是在编程中条件表达式的计算结果为真（true）或假（false）。如果这个条件表达式成立，那他会返回 true；如果这个条件表达式不成立，那他会返回 false。</p>
+<p>一些很简单的例子：当语句为 <code>if (1 &gt; 2)</code> 的时候，那一定是返回假的；当语句为 <code>if (10 &gt; 9)</code> 的时候，那一定是返回真的。</p>
+<h3 class="atx" id="22-比较运算符">2.2 比较运算符</h3>
+<p>比较运算符用于比较两个值之间的关系，常见的比较运算符包括：</p>
+<table>
+<thead>
+<tr>
+<th>相等</th>
+<th>不相等</th>
+<th>大于</th>
+<th>小于</th>
+<th>大于等于</th>
+<th>小于等于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>==</code></td>
+<td><code>!=</code></td>
+<td><code>&gt;</code></td>
+<td><code>&lt;</code></td>
+<td><code>&gt;=</code></td>
+<td><code>&lt;=</code></td>
+</tr>
+</tbody></table>
+<p>让我们来用题目举例子。</p>
+<blockquote>
+<h4 class="atx" id="题目描述">题目描述</h4>
+<p>小 A 在给数字分类时遇到了困难，他会得到一个整数 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span> <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:1em;vertical-align:-0.25em;" class="strut"></span><span class="mopen">(</span><span class="mord">0</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">≤</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.7719em;vertical-align:-0.136em;" class="strut"></span><span class="mord mathnormal">x</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">≤</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:1em;vertical-align:-0.25em;" class="strut"></span><span class="mord">150</span><span class="mclose">)</span></span></span></span>，如果 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">=</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">10</span></span></span></span>，他要把它分类到 <code>ten</code> 这个箱子中；如果 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.7719em;vertical-align:-0.136em;" class="strut"></span><span class="mord mathnormal">x</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">≤</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">9</span></span></span></span>，他要把它分类到 <code>small</code> 这个箱子中；如果 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.7719em;vertical-align:-0.136em;" class="strut"></span><span class="mord mathnormal">x</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">≥</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">100</span></span></span></span> 时，他要把它分类到 <code>big</code> 这个箱子中；否则他将把数字分类到 <code>other</code> 箱子。</p>
+<p>你的任务是，接收这个整数，然后输出它应该被分类到哪个箱子。</p>
+<h4 class="atx" id="输入格式">输入格式</h4>
+<p>一行，一个整数 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span>。</p>
+<h4 class="atx" id="输出格式">输出格式</h4>
+<p>一行，这个整数应该被分类到的箱子的名字。</p>
+</blockquote>
+<p>对于这道题，我们可以用 if 语句配合比较运算符编写出 C++ 程序。这是一个简单的示例：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    cin <span class="token operator">&gt;&gt;</span> x<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ten"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"small"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"big"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"other"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 class="atx" id="23-逻辑运算符">2.3 逻辑运算符</h3>
+<p>通过比较运算符，我们已经可以写一些程序来完成一些简单的问题了。不过如果我们想完成一些更复杂的问题，比如判断 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span> 是不是在 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">200</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">300</span></span></span></span> 这个区间时，只用比较运算符就会很麻烦了。当然了，像 <code>if (200 &lt;= x &lt;= 300)</code> 这样的语句显然是 <strong>错误的</strong>，这时候我们就要使用逻辑运算符了。</p>
+<p>逻辑运算符用于组合多个条件，常见的逻辑运算符包括：</p>
+<table>
+<thead>
+<tr>
+<th>与</th>
+<th>或</th>
+<th>非</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;&amp;</code></td>
+<td><code>||</code></td>
+<td><code>!</code></td>
+</tr>
+</tbody></table>
+<p>如何理解这三个运算符的含义呢：</p>
+<ul>
+<li><p><strong>与运算</strong>：当两个条件同时为真时，与运算结果为真；否则为假。例如，命题 A &amp;&amp; B 表示只有当命题 A 和命题 B 同时为真时，整个表达式才为真。</p>
+</li>
+<li><p><strong>或运算</strong>：表示至少一个成立。当两个条件中至少有一个为真时，或运算结果为真；只有当两个条件都为假时，结果才为假。例如，命题 A || B 表示只要命题 A 或命题 B 中有一个为真，整个表达式就为真。</p>
+</li>
+<li><p><strong>非运算</strong>：表示取反。对一个命题进行非运算，即取其相反命题的真值。例如，!A 表示当命题 A 为假时，!A 为真；当命题 A 为真时，!A 为假。</p>
+</li>
+</ul>
+<p>了解了这些，你就可以使用 if 语句处理一些更复杂的问题了。</p>
+<p>让我们举一些例子：判断整数 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span> 是否在 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">100</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">200</span></span></span></span> 这个范围时，我们可以用与运算 <code>if(x&gt;=100 &amp;&amp; x&lt;=200)</code> 来做；判断整数 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">x</span></span></span></span> 是不是 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">11</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">3</span></span></span></span> 的倍数时，我们可以用或运算 <code>if(x%11==0 != x%3==0)</code> 来做；当判断 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">a</span></span></span></span> 是否与 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6944em;" class="strut"></span><span class="mord mathnormal">b</span></span></span></span> 不相等时，我们既可以用 <code>if(a != b)</code> 做，也可以用 <code>if(!(a == b))</code> 来做。</p>
+<h3 class="atx" id="24-switch-语句">2.4 switch 语句</h3>
+<p>switch 语句的写法：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token keyword">switch</span> <span class="token punctuation">(</span>expression<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> value1<span class="token operator">:</span>
+        <span class="token comment">// 当 expression 等于 value1 时执行的代码</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> value2<span class="token operator">:</span>
+        <span class="token comment">// 当 expression 等于 value2 时执行的代码</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token comment">// 可以有更多的 case</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+        <span class="token comment">// 如果 expression 不等于任何一个 case 的值时执行的代码</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>switch 语句的优势在于结构清晰，当需要根据一个变量的不同取值来执行不同的代码块时，switch 语句可以提供更清晰、简洁的结构。</p>
+</article>
+</body>
+</html>

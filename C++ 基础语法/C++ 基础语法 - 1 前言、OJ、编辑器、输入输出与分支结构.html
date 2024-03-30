@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="icon" href="../img/Profile0.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  
+
+/*# sourceURL=webpack://./src/muya/lib/assets/styles/exportStyle.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9tdXlhL2xpYi9hc3NldHMvc3R5bGVzL2V4cG9ydFN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFNBQVM7RUFDVCxVQUFVO0VBQ1YscUJBQXFCO0FBQ3ZCOztBQUVBOztFQUVFLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCOztBQUVBOzs7RUFHRSwyQkFBMkI7QUFDN0I7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7QUFDQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxPQUFPO0VBQ1AsY0FBYztFQUNkLGNBQWM7RUFDZCwrQkFBK0I7QUFDakMiLCJzb3VyY2VSb290IjoiIn0= */</style>
+  <style>/*.markdown-body{}*/pre.front-matter{display:none!important;}</style>
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="c-基础语法---1-前言、oj、编辑器、输入输出与-int-类型变量">C++ 基础语法 - 1 前言、OJ、编辑器、输入输出与 int 类型变量</h1>
+<h3 class="atx" id="前言">前言</h3>
+<p>你好，我是 Hatmic！</p>
+<p>我在 14 岁的时候开始编写这套零基础的信息学竞赛的 C++ 的教程，记录我的所学。并通过教程的方式将知识分享给其他人。</p>
+<p>C++ 是信息学竞赛中最常见的语言。C++ 因为具有运行速度快、库功能强大等优势逐渐成为信息学竞赛中最主流的语言。</p>
+<p>本套教程将讲解竞赛中 C++ 的基础语法，希望我的读者们能有所收获！</p>
+<h3 class="atx" id="练习">练习</h3>
+<p>在国际上，有很多 OJ（Online Judge）可供选择。其中最常见的是美国的 <a href="https://codeforces.com">Codeforces</a> 和日本的 <a href="https://atcoder.jp">ATCoder</a>，在这两个平台中，有丰富的题目可供练习，定期也有比赛。对于我们初学者，ATCoder 的 ABC 比赛是很适合的。关于这两个网站我不多赘述，在网络上有很多资源。</p>
+<h3 class="atx" id="编辑器">编辑器</h3>
+<p>C++ 的编辑器多种多样，其中，对于 Windows 用户，我们推荐 Dev-C++ 作为新手编写 C++ 代码的工具；对于 Mac 用户，我们推荐 Xcode。关于安装及使用这些编辑器（IDE），网上有很多的教程，请读者自行搜索。</p>
+<p>其中，对于 Dev-C++，我推荐由 Embarcadero 公司维护的新版本，是支持 C++ 14 的（竞赛用的 C++ 版本是 C++ 14），安装包我放在了 GitHub 仓库的 Download 目录下。</p>
+<h3 class="atx" id="11-输出">1.1 输出</h3>
+<p>在 C++ 中，可以使用 <code>std::cin</code> 和  <code>std::cout</code> 来进行标准输入输出。但在使用他们之前，我们要包含输入输出流库 <code>&lt;iostream&gt;</code> 。在 C++ 中有很多库（或者称为头文件），不同的库中包含了不同的功能。这里提到的 <code>&lt;iostream&gt;</code> 库包含了输入输出的功能，我们在后面学习中会学更多的功能，遇到不同的头文件。</p>
+<p>C++ 中，我们一定要有一个 <code>main</code> 函数。我们要在 <code>main</code> 函数中编写程序中的核心的内容。</p>
+<p>伟大的 OIer 们都是从输出 <code>Hello, World!</code> 开始的，让我们尝试下吧！</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello, World!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>请注意，在 C++ 代码中，每一句的结尾一定要有 <code>;</code>。如果你的句末没有 <code>;</code>，就会被提示编译错误（CE）。</p>
+<p>在上面这份代码中，我们对于输出的内容要使用 <code>&lt;&lt;</code> 重载运算符插入到输出流中。<code>std::endl</code> 是用于输出换行并刷新缓冲区。你可以先不必了解这些概念性的东西，也许我们在后面会讲到，也许随着你写得代码越来越多你也会会逐渐理解。</p>
+<p>如果你想输出 <code>Hello, World!</code> 这样的文字，就必须要用两个 <code>"</code> 将其包裹起来。</p>
+<p>在 <code>main</code> 函数的结尾，我们通常会加上 <code>return 0;</code> 来返回整数类型的 <code>0</code>，代表着程序运行结束。</p>
+<p>在代码中，我们可以使用 <code>std</code> 命名空间，这样你就可以直接使用 <code>cout</code>、<code>endl</code>，而在前面无需加上 <code>std</code> 前缀。这样可以让代码更加简洁易读。</p>
+<p>如果要使用 <code>std</code> 命名空间，你只需要在代码中添加 <code>using namespace std;</code> 即可，完整代码如下：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello, World!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 class="atx" id="12-输入与变量">1.2 输入与变量</h3>
+<p>在 C++ 中，我们可以使用 <code>std::cin</code> 来做标准输入，其中输入的内容要用输入操作符 <code>&gt;&gt;</code> 连接。我们仍要引入 <code>&lt;iostream&gt;</code> 库。</p>
+<p>在算法竞赛中，输入的内容通常是需要被保存的，这时候就需要 <strong>变量</strong>。</p>
+<p>变量的类型有很多种，常见的如 <code>int</code>、<code>long long</code>、<code>double</code>、<code>char</code> 等等，我们后续都会讲到。这里我们以 <code>int</code> 类型变量举例。</p>
+<p><code>int</code> 类型变量是 C++ 中表示整数类型的数据类型之一。它通常占用 4 个字节（32 位），能保存的整数的范围约在 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.8389em;vertical-align:-0.1944em;" class="strut"></span><span class="mord">−</span><span class="mord">2</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">147</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">483</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">648</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.8389em;vertical-align:-0.1944em;" class="strut"></span><span class="mord">2</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">147</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">483</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">648</span></span></span></span>，也就是 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.8974em;vertical-align:-0.0833em;" class="strut"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span style="height:0.8141em;" class="vlist"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;" class="pstrut"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span style="margin-right:0.2222em;" class="mspace"></span><span class="mbin">−</span><span style="margin-right:0.2222em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">1</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.8974em;vertical-align:-0.0833em;" class="strut"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span style="height:0.8141em;" class="vlist"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;" class="pstrut"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span style="margin-right:0.2222em;" class="mspace"></span><span class="mbin">−</span><span style="margin-right:0.2222em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">1</span></span></span></span> 这个范围。</p>
+<p>声明一个&nbsp;<code>int</code>&nbsp;类型的变量可以使用语法&nbsp;<code>int myInt;</code>，这将在内存中分配存储整数值的空间。其中 <code>myInt</code> 是变量名，你可以把他改成任何合法的变量名（关于合法，你可以理解成和你现有的变量名、函数名以及标准模板库中的功能名字不冲突的）。你可以把变量想成一个盒子，每个盒子存储一个内容，也占用一些空间。</p>
+<p>接下来是一个例子：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span> <span class="token comment">// 定义整数类型变量 a </span>
+    cin <span class="token operator">&gt;&gt;</span> a<span class="token punctuation">;</span> <span class="token comment">// 输入 a 变量（应该是一个整数） </span>
+    cout <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// 输出 a 变量并换行 </span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在这个例子中，我们定义了一个 <code>int</code> 类型变量 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">a</span></span></span></span>，并且输入一个整数 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">a</span></span></span></span>。当我们输入一个符合条件的整数时，比如 <code>10</code>，你会发现程序输出了一个 <code>10</code>。</p>
+<p>请注意：在 C++ 中，对于任何变量的定义一定是要先声明的。如果没有声明就会产生编译错误。</p>
+<h3 class="atx" id="13-变量的赋值与运算">1.3 变量的赋值与运算</h3>
+<p>当你输出一个没有被处理过的变量时，你会发现这个变量是一个奇怪的数字。这是因为如果你没有为变量赋值，那么这块内存中原本可能包含着其他数据留下的残留内容，或者是操作系统随机分配的数值。</p>
+<p>对于变量的赋值，我们前面提到过可以通过输入的方式为变量赋值。不过如果你不想通过输入的方式，那我们有别的办法。</p>
+<p>我们可以可以通过赋值操作符&nbsp;<code>=</code>&nbsp;对&nbsp;<code>int</code>&nbsp;变量进行赋值，比如&nbsp;<code>int myInt = 10;</code>。</p>
+<p>当我们这样做了之后，<code>int</code> 类型变量 <code>myInt</code> 就存了 <code>10</code> 这个数字。试试看吧！</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span> <span class="token comment">// 定义整数类型变量 a </span>
+    cin <span class="token operator">&gt;&gt;</span> a<span class="token punctuation">;</span> <span class="token comment">// 输入 a 变量（应该是一个整数） </span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// 定义整数类型变量 b，并将其赋值为 10 </span>
+    cout <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> b <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// 输出两行，分别是变量 a, b</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>除了赋值操作以外，<code>int</code> 类型变量还可以进行一些数学运算。包括加、减、乘、除等。除了这些基本的数学运算，还有位运算、异或运算等。这两种运算可以先有所了解，后面会提到的。</p>
+<p>每一种运算都对应着运算符，请看下表：</p>
+<table>
+<thead>
+<tr>
+<th>加</th>
+<th>减</th>
+<th>乘</th>
+<th>除</th>
+<th>取模</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>+</code></td>
+<td><code>-</code></td>
+<td><code>*</code></td>
+<td><code>/</code></td>
+<td><code>%</code></td>
+</tr>
+</tbody></table>
+<p>取模运算其实是在求两个数相除后得到的余数，书写上常用 <code>mod</code> 表示。比如 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">10</span><span class="mspace allowbreak"></span><span style="margin-right:0.6667em;" class="mspace"></span></span><span class="base"><span style="height:0.6944em;" class="strut"></span><span class="mord"><span class="mord"><span class="mord mathrm">mod</span></span></span><span style="margin-right:0.1667em;" class="mspace"></span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">3</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">=</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">1</span></span></span></span>，即 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">10</span></span></span></span> 除以 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">3</span></span></span></span> 得到的余数。当 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">a</span><span class="mspace allowbreak"></span><span style="margin-right:0.6667em;" class="mspace"></span></span><span class="base"><span style="height:0.6944em;" class="strut"></span><span class="mord"><span class="mord"><span class="mord mathrm">mod</span></span></span><span style="margin-right:0.1667em;" class="mspace"></span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord mathnormal">b</span><span style="margin-right:0.2778em;" class="mspace"></span><span class="mrel">=</span><span style="margin-right:0.2778em;" class="mspace"></span></span><span class="base"><span style="height:0.6444em;" class="strut"></span><span class="mord">0</span></span></span></span> 的时候，则说明 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.4306em;" class="strut"></span><span class="mord mathnormal">a</span></span></span></span> 是 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:0.6944em;" class="strut"></span><span class="mord mathnormal">b</span></span></span></span> 的倍数。</p>
+<p>运算的优先级和数学上运算的优先级是一样的。你也可以用小括号 <code>()</code> 来确定运算的优先级，和数学一样，小括号的运算优先级是最大的。但没有中括号、大括号，这些都可以用小括号来代替。</p>
+<p>例如 <code>int b = a + 1;</code> 表示将变量 <code>a</code> 加上 <code>1</code> 的值存在变量 <code>b</code> 中。</p>
+<p>此外，变量还可以进行自增、自减等操作。你可以理解成：将 <code>n</code> 变量原来的值和另外一个值进行运算，运算后的结果存储在变量 <code>n</code> 中。</p>
+<p>接下来一个简单的示例，可以帮助你更好地了解变量的赋值与运算：</p>
+<pre><code class="fenced-code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// 为变量 m 赋值为 10 </span>
+    cout <span class="token operator">&lt;&lt;</span> m <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// 输出 m 的值 10</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> m<span class="token punctuation">;</span> <span class="token comment">// 将变量 n 赋值为 m，则 n 的值为 10 </span>
+    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">//  输出 n 的值为 10 </span>
+    n <span class="token operator">=</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// n 存储的值为 10 + 1 = 11</span>
+    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    n <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// n 存储的值为 11 - 2 = 9</span>
+    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    n <span class="token operator">=</span> n <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// n 存储的值为 9 / 3 = 3 </span>
+    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    n <span class="token operator">=</span> n <span class="token operator">*</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// n 存储的值为 3 * 0 = 0 </span>
+    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>将一个新的值存到变量中一定要用赋值操作（或者通过输入的方式），如果没有赋值操作，那如 <code>n + 1</code> 这样的单独的语句是没有任何意义的。</p>
+<p>此外，还有一些简单的写法，如 <code>n = n + 1</code> 可以简化为 <code>n += 1</code>，<code>a = a - b</code> 可以简化为 <code>a -= b</code>。这些简单的写法很实用，请读者们自己探索。</p>
+</article>
+</body>
+</html>
