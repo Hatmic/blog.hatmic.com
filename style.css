@@ -15,7 +15,7 @@ body {
 .left-column {
     float: left;
     width: 30%;
-    background-color: #000000;
+    background-color: #4F4E4D;
     min-height: 100vh;
 }
 
@@ -89,7 +89,7 @@ a {
 }
 
 .left-column .profile .information p {
-    color: #000000;
+    color: #4F4E4D;
     opacity: 0.8;
 }
 
@@ -99,7 +99,7 @@ a {
 
 .left-column .profile .intro a {
     text-decoration: none;
-    color: #000000;
+    color: #4F4E4D;
 }
 
 .left-column .avatar img {
@@ -113,7 +113,7 @@ a {
     user-select: none;
 }
 
-.center hr {
+.left-column .center hr {
     margin-bottom: 20px;
     width: 50px;
     background-color: #FFF;
@@ -147,7 +147,7 @@ a {
     backdrop-filter: blur(50px);
 }
 
-.text-with-underline {
+.left-column .text-with-underline {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -155,7 +155,7 @@ a {
     backdrop-filter: blur(50px);
 }
 
-.text-with-underline:after {
+.left-column .text-with-underline:after {
     content: '';
     position: absolute;
     left: 0;
@@ -167,7 +167,7 @@ a {
     transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.text-with-underline:hover:after {
+.left-column .text-with-underline:hover:after {
     width: 100%;
 }
 
@@ -208,13 +208,13 @@ a {
     fill: rgba(255, 255, 255, 1);
 }
 
-.centre {
+.right-column .centre {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
 }
 
-.card {
+.right-column .card {
     margin-top: 20px;
     background-color: #FFF;
     border-radius: 6px;
@@ -225,42 +225,42 @@ a {
     filter: brightness(1.0);
 }
 
-.card:hover {
+.right-column .card:hover {
     transform: scale(1.01);
     filter: brightness(0.85);
 }
 
-.card .title {
+.right-column .card .title {
     margin: 6px;
 }
 
-.card h3 {
+.right-column .card h3 {
     color: #333;
     margin: 0;
 }
 
-.card .time {
+.right-column .card .time {
     color: #333;
     margin: 0;
 }
 
-.card .time p {
+.right-column .card .time p {
     margin: 0;
     margin-top: 3px;
 }
 
-.card .time p img {
+.right-column .card .time p img {
     margin-right: 3px;
     margin-top: 3px;
     float: left;
 }
 
-.card .time span {
+.right-column .card .time span {
     margin-top: 3px;
     float: left;
 }
 
-.card .author {
+.right-column .card .author {
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -268,8 +268,9 @@ a {
 }
 
 footer {
-    background-color: #ffffff;
+    background-color: #232323;
     text-align: center;
+    color: #FFF;
 
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
