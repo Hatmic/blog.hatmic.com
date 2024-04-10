@@ -40,7 +40,7 @@ cardData.forEach(function(card) {
               <div class="time">
                   <p>${card.time}</p>
                   <p>
-                  <img src="img/Profile0.jpg" alt="" class="author">
+                  <img src="https://avatars.githubusercontent.com/u/150152150?v=4" alt="" class="author">
                   <span>${card.author}</span>
                   </p>
               </div>
